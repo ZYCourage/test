@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="zh" >
+	<head>
+		<meta charset="UTF-8">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum=1.0,minimum=1.0">
+		<title>普职分流：人生的岔路口</title>
+		<link href="css/content.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+
+		<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+		<script src="js/modernizr.js"></script> <!-- Modernizr -->
+		<script src="js/jquery-2.1.1.min.js"></script><!--导航栏js-->
+		<script src="js/main.js"></script> <!-- 导航栏js -->
+		<script src="js/echarts.js"></script><!--图表js-->
+		<script src="js/dark.js"></script><!--图表引入主题-->
+	 	<script src="js/spin.js"></script>
+
+	    <script src="https://code.highcharts.com.cn/highcharts/highcharts.js"></script><!--原模板部分图表js-->
+        <script src="https://code.highcharts.com.cn/highcharts/themes/dark-unica.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/highcharts-more.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/dumbbell.js"></script>
+        <script src="https://code.highcharts.com.cn/highcharts/modules/lollipop.js"></script>
+       
+       
+
+	</head>
+	<body>
+		<nav class="cd-vertical-nav">
+			<ul>
+				<li><a href="#section1" class="active"><span class="label">首页</span></a></li>
+				<li><a href="#section2"><span class="label">政策</span></a></li>
+				<li><a href="#section3"><span class="label">初中</span></a></li>
+				<li><a href="#section4"><span class="label">分流</span></a></li>
+				<li><a href="#section5"><span class="label">毕业</span></a></li>
+				<li><a href="#section6"><span class="label">未来可期</span></a></li>
+			</ul>
+		</nav><!-- .cd-vertical-nav -->
+
+		<button class="cd-nav-trigger cd-image-replace">Open navigation<span aria-hidden="true"></span></button>
+
+		<section id="section1" class="cd-section"><!--网站首页-->
+			<div class="content-wrapper">
+				<div class="htmleaf-header">
+				  <br><br><br>
+			
+			<!--开头部分-->
+			<div class="begining">
+
+				<br><br><br><br>
+				<p class="text">
+					<big>近年来中国大学教育飞速发展，1997年大学录取率仅有35.97%，到2020年大学录取率已经达到90.34%，中国孩子迈向大学教育的轨道逐渐成型。然而要进入这个轨道的第一道门槛是中考，而2020年中考的普高升学率只有57.08%，近40%的初中毕业生会被分流到中等职业学校，将来成为蓝领工人……
+					</big>
+			</div>
+					<br><br>
+			
+			</div>
+				<a href="#section2" class="cd-scroll-down cd-image-replace">scroll down</a><!--下一页滑动按钮-->
+			</div>
+		</section>
+
+		<section id="section2" class="cd-section">
+			<br><br><br>
+			<h1>“他们在担忧什么？”</h1>
+			<center><div style="width: 80%"><hr>
+
+			</div></center>
+			<h2>初升高阶段，我国长期以来实行的是职高基本比例“五五分流”的政策。
+				<br>这让“只有一半的孩子能上高中，剩下的孩子去职校”这样的说法在中国家长中流行。</h2>
+			<br><br>
+				<h2><br><strong>提出</strong><br>
+				1985年出台的《中共中央关于教育体制改革的决定》中，就明确提出了"普职分流"和“大体相当"的概念:“根据大力发展职业技术教育的要求，我国广大青少年一般应从中学阶段开始分流”“力争在5年左右，使大多数地区的各类高中阶段的职业技术学校招生数相当于普通高中的招生数，扭转目前中等教育结构不合理的状况。"
+			<br><strong>确定</strong><br>
+				在1996年颁布实施的职业教育法规定，国家根据不同地区的经济发展水平和教育普及程度，实施以初中后为重点的不同阶段的教育分流。《教育部办公厅关于做好2014年高中阶段学校招生工作的通知》曾明确提到“将应届初中毕业生有序分流到普通高中和中等职业学校，原则上要按50%的比例引导应届初中毕业生向中等职业学校分流”。
+				<br><strong>革新</strong><br>
+				2022年，新修订的职业教育法中，删除分流规定，明确:“在义务教育后的不同阶段因地制宜、统筹推进职业教育与普通教育协调发展”。职业教育是与普通教育具有同等重要地位的教育类型，是国民教育体系和人力资源开发的重要组成部分，是培养多样化人才、传承技术技能、促进就业创业的重要途经。</h2>
+
+			<div class="data6">
+				<div id="main" style="width: 90%;height:650px;"></div>
+				<script>
+					var myChart = echarts.init(document.getElementById('main'),'dark');
+					var data = {
+						"name": "初中生",
+						"children": [
+							{
+								"name": "高中生",
+								"children": [
+									{"name": "高考",
+										"children":[
+											{"name":"全日制本科"},
+											{"name":"全日制专科",
+												"children":[
+													{"name":"全日制专升本考试"},
+													{"name":"成人学历提升"}
+												]
+											}
+										]
+									},
+									{"name": "成人高考",
+										"children":[
+											{"name":"成人专科",
+												"children":[
+													{"name":"成人本科"}
+												]
+											}
+										]
+									}
+								]
+
+							},
+							{
+								"name": "中职生",
+								"children": [
+									{"name": "五年制专科",
+										"children":[
+											{"name":"全日制专升本考试"},
+											{"name":"成人学历提升"}
+										]
+									},
+									{"name": "中职/技校",
+										"children":[
+											{"name":"学业水平/高职分类考试",
+												"children":[
+													{"name":"全日制本科"},
+													{"name":"全日制专科",
+														"children":[
+															{"name":"全日制专升本考试"},
+															{"name":"成人学历提升"}
+														]
+													}
+												]
+											},
+											{"name":"成人学历提升",
+												"children":[
+													{"name":"成人专科",
+														"children":[
+															{"name":"成人本科"}
+														]
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					};
+					var option = {
+						tooltip: {
+							trigger: 'item',
+							triggerOn: 'mousemove'
+						},
+						series: [
+							{
+								type: 'tree',
+
+								initialTreeDepth: 2,
+								data: [data],
+
+								top: '1%',
+								left: '7%',
+								bottom: '1%',
+								right: '20%',
+
+								symbolSize: 10,
+								symbol:'pin',
+
+								label: {
+									position: 'left',
+									verticalAlign: 'middle',
+									align: 'right',
+									color:'#F8F8FF',
+									fontSize: 16,
+
+
+								},
+
+								leaves: {
+									label: {
+										position: 'right',
+										verticalAlign: 'middle',
+										align: 'left'
+									}
+								},
+
+								expandAndCollapse: true,
+								animationDuration: 550,
+								animationDurationUpdate: 750
+							}
+						]
+					};
+					myChart.setOption(option);
+
+				</script>
+
+			</div>
+			<h6>(*点击图中气泡可展开或收起树状图)</h6>
+			<br><br><br>
+			<p style="text-align: center">长久以来，中等职业学校的学生的升学问题社会关注度低。事实上，中职学生升学途径包含对口招生、单招以及普通高考<strong>3</strong>种，他们跟高中毕业生一样可以参加<strong>普通高考</strong>，一些普通高校的某些专业也招收中职学生。他们可以通过这些途径获得专科以及本科毕业证,但<strong>竞争压力并不亚于普高</strong>。</p>
+            <!--强调标签-->
+		</section>
+		<br>
+		<!--初中-->
+		<section id="section3" class="cd-section">
+			<div class="content-wrapper">
+				<br><br><br>
+				<h1>“嗨，很高兴认识你！”</h1>
+				<center><div style="width: 80%"><hr>
+
+				</div></center>
+			</div>
+			<br>
+			<h2>我们整理了豆瓣和知乎上一些分享自己升学经历的帖子，
+				<br>
+				将他们的经历以两个人物故事的形式呈现出来。
+				<br><br><br>
+				小文和小新是普通中学的两名初一在读学生。
+				<br>
+				小文考前抱佛脚，小升初考上了他所在的小地方最好的中学。
+				<br>
+				年级里有200多名同学。
+				<br>
+				入学时，小文排名<strong>96</strong>。
+				<br><br><br>
+				小新跟小文是小学同班同学，小学的时候成绩平平。
+				<br>
+				小升初考试后小新进了差一点的初中。整个年级接近200个同学。
+				<br>
+				入学时，小新排名<strong>32</strong>。</h2>
+			<br><br>
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_d0e9ba9594eef48858fa5561940d3ef7" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
+			<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+			<p>2020年参加中考的学生人数为<strong>1535万</strong>，最终有<strong>876万</strong>的学生不能进入高中。2021年中考分流政策重大改革，延续普职五五分流的趋势，中考禁止复读。</p>
+			<br><br><br><br>
+			<h2>升上初中之后，小文和小新都感觉到小学式的学习方式已经完全不能适应初中<strong>9</strong>门科目的学习。
+				每一科的老师只负责自己分内的教学工作，只有班主任在管理一大群调皮捣蛋的学生，每一次班会课班主任都需要着重强调纪律问题。</h2>
+			<br><br><br><br><br>
+			<iframe src="https://dycharts.com/xshow/index.html?id=c_f410e0349eeb4705c4824fb60c956833" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
+			<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+			<br><br><br><br><br>
+			<p>根据中小学教职工编制标准意见，
+				<br>
+				最新初中教职工与学生比标准为<strong>1：13.5</strong>。
+					<br>
+					生师比标准的制定目的是保障教师有精力兼顾每个孩子的个性需要。
+					<br>
+					从1993年开始，全国普通初中的生师比呈略有波动的下降趋势，以2013年为拐点，生师比稳定保持在<strong>13</strong>以下。</p>
+				<br><br><br><br><br>
+				<h2>小文进了年级最好的一个班级，班主任是特级教师，教英语。
+					小学保留下来的英语优势让班主任对小文青睐有加。因为受到老师的关照，小文学习的劲头更足了。
+					小文的老师里有好几个都是刚大学毕业的老师，数学老师还是研究生。
+					这让小文人生第一次对高学历有了憧憬的心情。
+					<br><br><br>
+					与此同时，到了差的初中的小新的经历截然不同。
+					<br>
+					“小小年级就跟着那些社会上的人一起鬼混，你是不是觉得自己这样做特别厉害？”
+					小新进入办公室交作业的时候就听到老师在大声呵斥一个高年级学生，那学生突然大吼一声:
+					“你不就是个破三本毕业的吗？有什么资格教训我？”
+					小新赶紧放下作业就离开了办公室。</h2>
+			</div>
+			<br><br><br><br><br>
+			<center>
+				<div class='tableauPlaceholder' id='viz1673155944616' style='position: relative'><noscript><a href='#'><img alt='仪表板 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16728367355650&#47;1_1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='_16728367355650&#47;1_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16728367355650&#47;1_1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='zh-CN' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1673155944616');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='600px';vizElement.style.height='537px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='600px';vizElement.style.height='537px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+			</center>
+			<br><br><br><br><br>
+			<p>国家对初中教师队伍要求趋于严格，向着年轻化、专业化、严格化的方向发展，初中教师的队伍不断注入新的血液，教师的学历水平逐年提高。
+				20年间，全国初中教师学历由专科学历占主导转向本科学历占据绝对主导。本科生学历教师在20年间增长了<strong>5.74倍</strong>，研究生学历教师人数增长了<strong>63倍</strong>，专科、高中及以下学历教师人数逐年下降。</p>
+			<br><br><br><br><br>
+		</section><!-- cd-section -->
+		
+		
+		<section id="section4" class="cd-section">
+			<!--中职-->
+			<br><br><br>
+			<h1>“站在人生的岔路口,我们该何去何从？”</h1>
+			<center><div style="width: 80%">
+				<hr>
+			</div></center>
+			<br>
+			<div class="data1">
+
+				<h4>小新在进入初中之后一直静不下心来好好学习。
+					长时间荒废学业的小新在初三的时候根本跟不上课堂的进度，想学习也不知道从哪里开始补起。
+					成绩排名下降到谷底，考不上普高只能去中职。
+				</h4>
+				<br><br><br><br><br>
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_b3819fb7f0ee7e60aff410a5ae49917f" width="400" height="450" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>20年间，初中升中职的升学率从原本的<strong>不足1成</strong>
+					到<strong>接近4成</strong>，成为高中阶段教育的重要组成部分。</p>
+				<br><br><br><br><br>
+				<h4 style="text-indent: 2em">我是小新，刚刚进入一所中职。我在想，这三年我一定要认认真真度过，不能再让自己后悔了。
+					老师的教学水平、同学间的人际关系、学习氛围一般般,也还说得过去。听说普高的教学资源比中职好个几倍,但后悔是没有用的。
+					现在我要利用好我所能争取到的一切资源来好好学习。</h4>
+				<br><br><br><br><br>
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_e0bc1dc2b50bc3371d2663e68c8189c0" width="400" height="450" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>自1993年以来，中等职业学校同样高于国家标准。就全国范围而言，中小学教师整体上属于超编状态，高中阶段（含高中、中等职业教育）教师配备不符合国家要求，中等职业学校师资配备比例尤其失衡，一度超过<strong>20:1</strong>。</p>
+				<br><br>
+				<br><br><br>
+				<center>
+				<div class='tableauPlaceholder' id='viz1673154085045' style='position: relative'><noscript><a href='#'><img alt='仪表板 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16728392718930&#47;1_1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='_16728392718930&#47;1_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16728392718930&#47;1_1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='zh-CN' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1673154085045');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+				</center>
+					<!--缺tableau的图9 中等职业学校教师学历情况图-->
+				<br><br><br><br><br>
+				<p>总体上在教师学历情况方面，普通高中相对于中等职业学校有明显优势。本科生学历教师均占全部教师的<strong>8成以上</strong>，其中中等职业学校本科学历教师人数在总人数的<strong>8成以上</strong>。专科学历教师占教师总人数的<strong>不足1成</strong>。</p>
+				<br><br><br><br><br>
+				<center>
+					<div class='tableauPlaceholder' id='viz1673154289505' style='position: relative'><noscript><a href='#'><img alt='仪表板 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16729277176600&#47;1_1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='_16729277176600&#47;1_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16729277176600&#47;1_1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='zh-CN' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1673154289505');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+				</center>
+				<!--缺tableau的图11中等职业学校拥有资产情况图（点击）-->
+				<br><br><br><br><br>
+				<p>中等职业学校绝大多数项目呈<strong>稳定</strong>的增加趋势，但图书总册数和普通教室间数两个项目的数据均有所下降。根据教育部全国教育经费执行情况统计快报（2016-2020），在高中阶段，中等职业学校经费总投入占了<strong>1/3</strong>左右，而普通高中占了大约<strong>2/3</strong>。</p>
+				<br><br><br><br><br>
+				<h4 style="text-indent: 2em">我发现我之前对中职的印象是无知的，在中职学校里也有努力向上的同学。大部分老师讲的专业知识还是扎实的，也很敬业。中职更侧重专业方向的科目，高考分文化课和专业课。我开始脚踏实地地学习。我还去找普通高中新课标的教材，掌握好教材里面的例子和习题，再不懂就在网上找答案和讲解教程。最终顺利拿到了职业资格证书，并且考上了省内最好的一所高职。</h4>
+				<br><br><br><br><br>
+<!--				图13-->
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_29bb985132f4d46be77a8fd2f840035f" width="450" height="400" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>中等职业学校完成学业的学生占比稳定在<strong>8成左右</strong>，近年来完成学业学生比率稳步上升；2013年，中等职业学校学生获得职业资格证书的比率为<strong>73.93%</strong>，2020年这一数据为<strong>58.37%</strong>。8年间，这一数据一直呈<strong>下降</strong>趋势。</p>
+				<br><br><br><br><br>
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_1516272a33dd585fe3a7d267bf89febf" width="400" height="450" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>同年，根据总样本量为<strong>16946</strong>的统计数据，中等职业学校毕业生升学率为<strong>64.9%</strong>，其中本科升学率为<strong>6.4%</strong>。</p>
+				<br><br><br><br><br>
+
+
+			</div>
+			<!--高中-->
+			<div class="data2">
+				<h4>上了初中之后的小文认真按照老师规划的学习路线走。 初一的时候还好，但到了初二，小文发现课有些听不懂。 上了初三，小文想冲刺重点高中，但竞争压力很大， 最终只考上普通高中。</h4>
+				<br><br><br><br><br>
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_e89d3a975f9efae638e40a4eceb74d26" width="400" height="450" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>近20年全国初中升普高的升学率呈上升趋势,由20年前<strong>不足3成</strong>上升到<strong>接近6成</strong>，这是教育事业发展的重要体现。</p>
+				<br><br><br><br><br>
+				<h4 style="text-indent: 2em">我是小文，进入高中之后，感觉学校的配套设施和学习氛围都还不错。老师们的专业能力和教学质量也很好。
+					各科的老师都很严格地在抓成绩，希望我们能够缩小跟重点高中的差距。
+					我们这一届建有塑胶跑道的操场刚好完工，每间教室都安装了空调，学习环境更舒适了。</h4>
+				<br><br>
+
+				<br><br><br>
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_058e48fa968fe4a116f40e6a181ce474" width="400" height="450" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>生师比是学校教学工作的重要指标。过高的生师比不利于教育教学质量的提升。可以看到自1993年以来，全国普通高中生师比偏高，高于高中阶段教育（含高中、中等职业教育）教职工与学生比为<strong>1：12.5</strong>的国家标准。</p>
+				<br><br><br><br><br>
+				<!--tableau（图8）-->
+				<center>
+				<div class='tableauPlaceholder' id='viz1673154116089' style='position: relative'><noscript><a href='#'><img alt='仪表板 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;tw&#47;twbx_16728389730560&#47;1_1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='twbx_16728389730560&#47;1_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;tw&#47;twbx_16728389730560&#47;1_1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='zh-CN' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1673154116089');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+			</center>
+				<br><br><br><br><br>
+				<p>自2013年以来的<strong>8</strong>年间，普通高中的教师总数大约是中等职业学校教师总数的<strong>3倍</strong>。其中研究生学历教师占比普通高中略高于中等职业学校，在教师总人数中占比略有上涨。普通高中本科学历教师人数占比为总人数的<strong>9成左右</strong>。</p>
+				<br><br><br><br><br>
+				<center>
+					<div class='tableauPlaceholder' id='viz1673154335895' style='position: relative'><noscript><a href='#'><img alt='仪表板 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16729272718350&#47;1_1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='_16729272718350&#47;1_1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;_1&#47;_16729272718350&#47;1_1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='zh-CN' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1673154335895');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='400px';vizElement.style.height='477px';} else { vizElement.style.width='100%';vizElement.style.height='727px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+				</center>
+            <!--tableau的图（图10）-->
+				<br><br><br><br><br>
+				<p>经费投入的差距，最直观的反映就是<strong>设备支持</strong>。自2013年以来的8年间，普通高中在学校资产方面，包括运动场地面积、图书总册数、计算机数、普通教室间数、网络多媒体教师间数以及固定资产总值等所有项目
+					均保持<strong>稳定上升</strong>幅度。</p>
+				<br><br><br><br><br>
+			<h4 style="text-indent: 2em">上了高三，学校的各个学科的教师组都为我们精心编写了专属于我们学校的讲义，整合了容易对比记忆的知识点、一题多解的例题、对应到知识点的巩固题、变式题型和高考真题等材料。我周末还报了3个补习班，成绩不见长的时候也有过自我怀疑。幸好，我周围的同学都很正能量，他们的努力感染着我。我考上了一本大学，我们学校今年考上本科的学生数量超过了5成。</h4>
+				<br><br><br><br><br>
+<!--				图12-->
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_e5bf8c348a4a9883a4ce52edbaedd384" width="450" height="400" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>自2008年以来的<strong>13</strong>年间，普通高中完成学业的学生占比一直高于<strong>9成</strong>，
+					近年来完成学业学生比率趋近于<strong>100%</strong>。在“只有考上大学才能找到好工作”看法的影响下，普通高中显然是比中等职业学校更有吸引力的选择。</p>
+				<br><br><br><br><br>
+				<iframe src="https://dycharts.com/xshow/index.html?id=c_4214af3b6110aefcdcbd291a07df704e" width="400" height="450" scrolling="no" frameborder="0" align=""></iframe>
+				<br><br>
+				<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+				<br><br><br>
+				<p>2020年，普通高中升学率为<strong>90.3%</strong>，其中本科升学率为<strong>41.37%</strong>，专科升学率为<strong>48.96%</strong>。</p>
+				<br><br><br><br>
+			</div>
+
+		</section>
+		
+		<!--毕业-->
+		<section id="section5" class="cd-section" >
+			<br><br><br>
+			<h1>“我们毕业了！”</h1>
+			<center><div style="width: 80%"><hr>
+
+			</div></center>
+				<br>
+
+			<h2>小文说：
+				<br><br><br>
+				”并不是进入大学之后学习就轻松，上了大学之后我明显感到生活更充实了。我忙着参加各种活动、实践和比赛锻炼自己的能力,培养自己的社交能力、兴趣爱好与处理事情的能力。大学的老师不再像中小学时的老师一样关注我们的学习，一切都要靠自己。我打算继续学业，攻读研究生。“</h2>
+			<br><br><br><br>
+			<h2>小新说：
+				<br><br><br>
+				”进入大学之后学习压力反而更重了，社会上对专科学校的偏见还是很大的。学校的师资不错，不少老师还是行业大牛。大部分老师上课的时候没有懈怠，很认真地传授知识。我决心准备专升本考试，从一开始就恶补知识，同时准备英语四级和计算机二级考试，最终都顺利通过了。“</h2>
+			<br><br><br><br><br>
+			<iframe src="https://dycharts.com/xshow/index.html?id=c_945ec39bb77f65acd85d5cde32885b00" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
+			<br><br>
+			<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+			<br><br><br>
+			<p>自2013年起的8年间，全国共增加了<strong>100</strong>所本科院校，总数达到<strong>1270</strong>所。</p>
+			<br><br><br><br><br>
+			<iframe src="https://dycharts.com/xshow/index.html?id=c_78a58399ccfb70ecd99b53d81ed557c5" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
+
+			<br><br>
+			<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+			<br><br><br>
+
+			<p>同时期，全国共增加<strong>147</strong>所专科院校，总数达到<strong>1468</strong>所。高职机构的数量一直多于本科院校数量。</p>
+			<br><br><br><br><br>
+			<iframe src="https://dycharts.com/xshow/index.html?id=c_385ab694672cbfce2fd649960c801d12" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
+
+			<br><br>
+			<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+			<br><br><br>
+			<p>自2000年以来，由于本科生招生人数的上升，本科生师比不断上升。而其生师比下降的拐点在<strong>2004</strong>年，近10年来，全国本科院校的生师比<strong>稳中有降</strong>。</p>
+			<br><br><br><br><br>
+			<iframe src="https://dycharts.com/xshow/index.html?id=c_1639b71615cba8926d3aae023fccd0c6" width="600" height="510" scrolling="no" frameborder="0" align=""></iframe>
+			<br><br>
+			<h6>(*鼠标悬浮在图上可查看详细数据）</h6>
+			<br><br><br>
+			<p>随着国家对职业教育发展越来越重视,大专招生人数逐年上升。近20年来，高职教育机构的高职院校生师比较不稳定，几度波动，保持偏高的水平。在2020年，超过了<strong>20：1</strong>.</p>
+			<br><br><br><br><br>
+			<h2>受传统教育观念的影响，中等职业学校的社会认可度一直相对较低。在大众的印象里，中职是问题学生考不上高中的备胎选择，进厂是中职学生毕业之后的唯一出路。而实际上，中等职业学校学生并不像以前那样毕业即就业，有<strong>75%以上</strong>的学生选择了毕业后继续升学。</h2>
+			<br><br><br><br><br>
+			<center>
+				<div id="div1">
+					<a>“高中-高考-大学-工作”是“正轨”</a>
+					<a>考不上高中就只能去读职校</a>
+					<a>中职是成绩不好的学生混日子的地方</a>
+					<a>中职毕业只能进厂到流水线打螺丝</a>
+					<a>人才市场歧视非统招学历学生</a>
+					<a>考上好大学才能找到好工作</a>
+					<a>考不上高中就只能去读职校</a>
+					<a>能力和学历无关</a>
+					<a>中职学习一技之长提前步入社会</a>
+					<a>高中才是真正学习的地方</a>
+					<a>普通高中才是面向高考上大学的</a>
+
+				</div>
+				<br>
+				<h6>（*鼠标悬停滚动阅读“普职分流”的社会评价）</h6>
+			</center>
+
+			<br><br><br>
+		</section>
+		
+	<section id="section6" class="cd-section">
+		<br><br><br>
+		<h1>“我们都有光明的未来”</h1>
+		<center><div style="width: 80%"><hr>
+
+		</div></center>
+	  <p style="text-align: left;text-indent: 2em">普高和中职教育资源倾斜力度不同的原因很大程度上还是传统教育思维根深蒂固。职业教育始终跟不上普通教育的发展,而后衍生出<strong>中职教育高中化</strong>，<strong>高职教育本科化</strong>本末倒置的职业教育。</p>
+		  <br><br>
+		<p style="text-align: left;text-indent: 2em">目前的社会评价以及求职市场上依然普遍存在偏重学历的现象，有比较高的学历似乎更能够拿得出手。发展职业教育就要解决<strong>“有技能没学历”</strong>的痛点。</p>
+		  <br><br>
+		<p style="text-align: left;text-indent: 2em">近些年来，国家开始大力扶持国内各级职业院校，在职业教育领域表现出迫切的建设决心。<strong>中国举办着世界上规模最大的职业教育</strong>。职业教育与普通教育是不同教育类型，具有同等重要地位，是国民教育体系和人力资源开发的重要组成部分，是培养多元化人才、传承技术技能、促进就业创业的重要途径。</p>
+
+		  <br><br>
+		  <p style="text-align: center">整个社会需要摆正职业教育的地位。</p>
+	  </p>
+		<br>
+	</section>
+	
+	<footer class="producer">
+<center>
+		<div style="width:80%;font-size: 16px;font-family:"Microsoft YaHei", "宋体", "Segoe UI", "Lucida Grande", Helvetica, Arial, sans-serif, FreeSans, Arimo">
+	<br><br>
+	<p style="font-weight: 800;text-align: left;">关于我们</p>
+	<div style="width:8%;float: left">
+		<hr>
+	</div>
+	<p style="text-align: left;font-size: 14px">
+
+			<br>
+			团队成员|姚继武 黄思莹 王萌钰
+			<br>
+			指导老师|吴小坤
+			<br>
+			作者团队|华南理工大学 新闻与传播学院
+		</p>
+		<p style=";font-size: 12px;text-align: left;">
+			<br>
+			文案来源：
+		<br>
+		[1]知乎平台
+		<br>
+		[2]豆瓣小组
+
+		<br>
+		数据来源：
+		<br>
+		[1]教育部官网
+		<br>
+		[2]国家统计局
+		<br>
+			[3]北京大学中国教育财政科学研究所
+			<br>
+		参考资料：
+		<br>
+		[1]祖国 2017年01期《浅谈中职教育管理的创新》
+		<br>
+		[2]民生周刊2016年05期《普及高中教育重点在中职教育》
+		<br>
+		[3]职业2018年06期《浅谈当前中职学校教育教学的转变与创新》
+		</p>
+		<br>
+	<hr>
+	<center>
+		<p>2022 © 华南理工大学 新闻与传播学院</p>
+	</center>
+
+		</div>
+
+</center>
+
+
+		<br><br>
+	</footer>
+
+	</body>
+</html>
